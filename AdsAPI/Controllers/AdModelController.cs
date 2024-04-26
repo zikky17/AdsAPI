@@ -42,6 +42,20 @@ namespace AdsAPI.Controllers
             return Ok(await _dbContext.Ads.ToListAsync());
         }
 
+        // READ ONE ///////////////////////////////////////////////////////
+        /// <summary>
+        /// Retrieve ONE Ad from the database
+        /// </summary>
+        /// <returns>
+        /// A single ad
+        /// </returns>
+        /// <remarks>
+        /// Example end point: GET /{id}
+        /// </remarks>
+        /// <response code="200">
+        /// Successfully returned the ad you requested
+        /// </response>
+
         [HttpGet]
         [Authorize(Roles = "Admin, User")]
         [Route("{id}")]
@@ -56,6 +70,20 @@ namespace AdsAPI.Controllers
             return Ok(ad);
         }
 
+        // CREATE ///////////////////////////////////////////////////////
+        /// <summary>
+        /// Create an ad and save it to the database
+        /// </summary>
+        /// <returns>
+        /// A created Ad
+        /// </returns>
+        /// <remarks>
+        /// Example end point: POST /Ad
+        /// </remarks>
+        /// <response code="200">
+        /// Successfully created your Ad!
+        /// </response>
+
         [HttpPost]
         [Authorize(Roles = "Admin")]
         public async Task<ActionResult<AdModel>> PostAd(AdModel ad)
@@ -64,6 +92,20 @@ namespace AdsAPI.Controllers
             await _dbContext.SaveChangesAsync();
             return Ok(await _dbContext.Ads.ToListAsync());
         }
+
+        // UPDATE ///////////////////////////////////////////////////////
+        /// <summary>
+        /// Updates ALL information about the Ad
+        /// </summary>
+        /// <returns>
+        /// An updated Ad
+        /// </returns>
+        /// <remarks>
+        /// Example end point: PUT /Ad
+        /// </remarks>
+        /// <response code="200">
+        /// Successfully updated your Ad!
+        /// </response>
 
         [HttpPut]
         [Authorize(Roles = "Admin")]
@@ -76,7 +118,7 @@ namespace AdsAPI.Controllers
                 return BadRequest("Ad not found");
             }
 
-            adToUpdate.Name = ad.Name;
+            adToUpdate.Title = ad.Title;
             adToUpdate.Description = ad.Description;
             adToUpdate.Price = ad.Price;
 
@@ -84,6 +126,20 @@ namespace AdsAPI.Controllers
 
             return Ok(await _dbContext.Ads.ToListAsync());
         }
+
+        // DELETE ///////////////////////////////////////////////////////
+        /// <summary>
+        /// Deletes the Ad
+        /// </summary>
+        /// <returns>
+        /// A deleted Ad
+        /// </returns>
+        /// <remarks>
+        /// Example end point: DELETE /{id}
+        /// </remarks>
+        /// <response code="200">
+        /// Successfully deleted your Ad!
+        /// </response>
 
         [HttpDelete]
         [Authorize(Roles = "Admin")]
@@ -101,6 +157,20 @@ namespace AdsAPI.Controllers
             await _dbContext.SaveChangesAsync();
             return Ok(await _dbContext.Ads.ToListAsync());
         }
+
+        // PATCH ///////////////////////////////////////////////////////
+        /// <summary>
+        /// Updates specific information about an Ad
+        /// </summary>
+        /// <returns>
+        /// An updated Ad
+        /// </returns>
+        /// <remarks>
+        /// Example end point: PATCH /Ad {id}
+        /// </remarks>
+        /// <response code="200">
+        /// Successfully updated your Ad!
+        /// </response>
 
         [HttpPatch]
         [Authorize(Roles = "Admin")]

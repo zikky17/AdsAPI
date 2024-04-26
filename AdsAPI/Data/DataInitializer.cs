@@ -21,23 +21,25 @@ namespace AdsAPI.Data
 
         private void SeedData()
         {
-            if (!_dbContext.Ads.Any(a => a.Name == "Bicycle"))
+            if (!_dbContext.Ads.Any(a => a.Title == "Bicycle"))
             {
                 _dbContext.Add(new AdModel
                 {
-                    Name = "Bicycle",
+                    Title = "Bicycle",
                     Description = "Brand new bicycle for sale!",
                     Price = 500,
+                    Created = DateTime.Now,
                 });
             }
 
-            if (!_dbContext.Ads.Any(a => a.Name == "Video Game"))
+            if (!_dbContext.Ads.Any(a => a.Title == "Video Game"))
             {
                 _dbContext.Add(new AdModel
                 {
-                    Name = "Video Game",
+                    Title = "Video Game",
                     Description = "Retro Pac man game for sale!",
                     Price = 2500,
+                    Created = DateTime.Now,
                 });
             }
         }
