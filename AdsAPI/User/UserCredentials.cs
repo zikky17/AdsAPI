@@ -6,20 +6,20 @@
         {
             new UserModel() // Full read/write access
             {
-                UserName = "richard_admin",
-                EmailAddress = "richard_admin@email.se",
+                UserName = "admin",
+                EmailAddress = "admin@email.se",
                 Password = "passwordAdmin",
-                GivenName = "Richard",
-                SurName = "chalk",
+                GivenName = "Gustav",
+                SurName = "Ivering",
                 Role = "Admin",
             },
             new UserModel() // Can only Read
             {
-                UserName = "richard_user",
-                EmailAddress = "richard_user@email.se",
+                UserName = "user",
+                EmailAddress = "user@email.se",
                 Password = "passwordUser",
-                GivenName = "Richard",
-                SurName = "Chalk",
+                GivenName = "Gustav",
+                SurName = "Ivering",
                 Role = "User",
             }
         };

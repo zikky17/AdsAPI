@@ -28,7 +28,7 @@ namespace AdsAPI
                 {
                     Version = "v1.0",
                     Title = "My API for Ads",
-                    Description = @"API for retrieving Ads",
+                    Description = @"API for full CRUD of ads",
                     Contact = new OpenApiContact
                     {
                         Name = "Gustav Ivering",

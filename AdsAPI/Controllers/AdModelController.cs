@@ -34,6 +34,9 @@ namespace AdsAPI.Controllers
         /// <response code="200">
         /// Successfully returned a full list of ALL Ads
         /// </response>
+        /// <response code="401">
+        /// You are not authenticated (Log in first)
+        /// </response>
 
         [HttpGet]
         [Authorize(Roles = "Admin, User")]
@@ -54,6 +57,9 @@ namespace AdsAPI.Controllers
         /// </remarks>
         /// <response code="200">
         /// Successfully returned the ad you requested
+        /// </response>
+        /// <response code="401">
+        /// You are not authenticated (Log in first)
         /// </response>
 
         [HttpGet]
@@ -83,6 +89,9 @@ namespace AdsAPI.Controllers
         /// <response code="200">
         /// Successfully created your Ad!
         /// </response>
+        /// <response code="401">
+        /// You are not authenticated (Log in first)
+        /// </response>
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
@@ -105,6 +114,9 @@ namespace AdsAPI.Controllers
         /// </remarks>
         /// <response code="200">
         /// Successfully updated your Ad!
+        /// </response>
+        /// <response code="401">
+        /// You are not authenticated (Log in first)
         /// </response>
 
         [HttpPut]
@@ -140,6 +152,9 @@ namespace AdsAPI.Controllers
         /// <response code="200">
         /// Successfully deleted your Ad!
         /// </response>
+        /// <response code="401">
+        /// You are not authenticated (Log in first)
+        /// </response>
 
         [HttpDelete]
         [Authorize(Roles = "Admin")]
@@ -170,6 +185,9 @@ namespace AdsAPI.Controllers
         /// </remarks>
         /// <response code="200">
         /// Successfully updated your Ad!
+        /// </response>
+        /// <response code="401">
+        /// You are not authenticated (Log in first)
         /// </response>
 
         [HttpPatch]
