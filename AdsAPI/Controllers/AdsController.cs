@@ -9,14 +9,14 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AdsAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("[controller]")]
     [ApiController]
     [EnableCors("AllowAll")]
-    public class AdModelController : ControllerBase
+    public class AdsController : ControllerBase
     {
 
         private readonly ApplicationDbContext _dbContext;
-        public AdModelController(ApplicationDbContext dbContext)
+        public AdsController(ApplicationDbContext dbContext)
         {
             _dbContext = dbContext;
         }
